@@ -12,7 +12,7 @@ ARG EXTRA_BUILD_ARGS=""
 COPY . .
 RUN GOOS=linux GOARCH=$TARGETARCH go build $EXTRA_BUILD_ARGS \
       -ldflags '-w -extldflags "-static" ' \
-      -o /vectorizer ./cmd
+      -o /vectorizer ./cmd/server
 
 FROM alpine AS vectorizer
 COPY --from=server_builder /vectorizer /bin/vectorizer
