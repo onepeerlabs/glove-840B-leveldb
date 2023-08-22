@@ -84,7 +84,7 @@ func initDB(dbPath string) (*leveldb.DB, error) {
 func main() {
 	dbPath := os.Getenv("LEVELDB_PATH")
 	if dbPath == "" {
-		dbPath = "/embeddings"
+		dbPath = "./embeddings"
 	}
 
 	portStr := os.Getenv("VECTORIZER_PORT")
